@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { IsNotEmpty } from "class-validator";
+
 
 @Entity({ name: "tb_categorias" })
 export class Categoria {
@@ -13,4 +14,6 @@ export class Categoria {
   @IsNotEmpty()
   @Column({ length: 100, nullable: false })
   categoria: string;
+    Produto: any;
+
 }
